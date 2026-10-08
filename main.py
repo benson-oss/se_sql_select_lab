@@ -53,7 +53,12 @@ print(df_short_title)
 # STEP 8
 # Replace None with your code
 sum_total_price = pd.read_sql(
-    """SELECT ROUND(priceEach * quantityOrdered) AS total_priceFROM orderDetails;""",conn).sum()
+    """
+    SELECT ROUND(priceEach * quantityOrdered) AS total_price
+    FROM orderDetails;
+    """,
+    conn
+).sum()
 print(sum_total_price)
 
 # STEP 9
